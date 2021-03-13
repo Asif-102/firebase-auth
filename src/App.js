@@ -52,7 +52,14 @@ function App() {
     })
     .catch(err => {
       // An error happened.
-    })
+    });
+  }
+
+  const handleBlur = (event) =>{
+    console.log(event.target.name ,event.target.value);
+  }
+  const handleSubmit = () =>{
+
   }
 
   return (
@@ -68,6 +75,15 @@ function App() {
           <img src={user.photo} alt=""/>
         </div>
       }
+
+      <h1>Our own Authentication</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
+        <br/>
+        <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+        <br/>
+        <input type="submit" value="Submit"/>
+      </form>
     </div>
   );
 }
