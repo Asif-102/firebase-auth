@@ -30,9 +30,8 @@ function App() {
         name:displayName,
         email:email,
         photo: photoURL
-      }
+      };
       setUser(signedInUser);
-      console.log(displayName, email, photoURL);
     })
     .catch(err => {
       console.log(err);
@@ -50,10 +49,9 @@ function App() {
         email:''
       }
       setUser(signedOutUser);
-      console.log(res);
     })
     .catch(err => {
-
+      // An error happened.
     })
   }
 
